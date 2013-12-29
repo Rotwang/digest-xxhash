@@ -1,11 +1,16 @@
 .PHONY: all regression ut panda-install clean
+.DELETE_ON_ERROR:
 
 ifndef V
     MAKEFLAGS += -s
 endif
 
 MODULE_ROOT := $(abspath $(dir $(firstword $(MAKEFILE_LIST))))
+INC_ROOT := $(MODULE_ROOT)/lib
 build-dir := build
+
+P6EXE := perl6
+CMAKE := cmake
 
 say       := echo
 separator := =====
@@ -21,8 +26,8 @@ ut:
 panda-install:
 	mkdir -p $(build-dir)
 	cd $(build-dir) && \
-		cmake -DINC_ROOT=$(MODULE_ROOT)/lib ../src/
+		$(CMAKE) -DINC_ROOT=$(INC_ROOT) -DP6EXE=$(P6EXE) ../src/
 	$(MAKE) -C $(build-dir) install
 
 clean:
-	$(RM) -r $(build-dir) $(MODULE_ROOT)/lib
+	-$(RM) -r $(build-dir) $(MODULE_ROOT)/blib

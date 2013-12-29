@@ -3,5 +3,5 @@
     "version"     : "*",
     "description" : "p6 bindings for xxHash (http://code.google.com/p/xxhash/)",
     "depends"     : [ "NativeCall" ],
-    "source-url"  : "git@github.com:Rotwang/digest-xxhash.git"
+    "source-url"  : "git://github.com/Rotwang/digest-xxhash.git"
 }
