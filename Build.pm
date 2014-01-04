@@ -28,14 +28,6 @@ class Build is Panda::Builder {
                         note "*** xxhash library build failed with exit status {$retval}!";
                         exit 1;
                 }
-                
-                # just a temporary hack ;}
-                #temp $*CWD = IO::Spec.rel2abs("blib");
-
-                #say "Compiling xxHash.pm to {compsuffix}";
-                #shell "PERL6LIB='./lib' $*EXECUTABLE_NAME --target={compsuffix} "
-                #        ~ "--output=lib/Digest/xxHash.pir lib/Digest/xxHash.pm"
-                #        or fail "Failed building xxHash.pir";
         }
 }
 

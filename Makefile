@@ -26,8 +26,8 @@ ut:
 panda-install:
 	mkdir -p $(build-dir)
 	cd $(build-dir) && \
-		$(CMAKE) -DINC_ROOT=$(INC_ROOT) -DP6EXE=$(P6EXE) ../src/
+		$(CMAKE) -DINC_ROOT=$(INC_ROOT) ../src/
 	$(MAKE) -C $(build-dir) install
 
 clean:
-	-$(RM) -r $(build-dir) $(MODULE_ROOT)/blib
+	-$(RM) -r $(build-dir) $(MODULE_ROOT)/lib

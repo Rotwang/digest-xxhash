@@ -9,6 +9,7 @@ xxHash's source code is bundled along so make/cmake/ on *NIX are required!
 ## Dependencies.
 
 run time: NativeCall (p6 module)
+
 compile time: make (on *NIX), c compiler and friends, cmake (http://www.cmake.org/)
 
 ## Exported subroutines.
